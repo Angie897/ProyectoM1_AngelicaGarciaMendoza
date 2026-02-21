@@ -1,0 +1,243 @@
+body{
+    background-color: rgb(6, 4, 0);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.enlace-youtube {
+    font-size: 1.5em;
+}
+
+.caja {
+  width: 300px;
+  height: 200px;
+}
+* {
+  box-sizing: border-box;
+}
+
+.producto {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin: 20px;
+  background-color: white;
+}
+
+.producto img {
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.producto h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.producto .precio {
+  color: green;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.producto button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.producto button:hover {
+  background-color: darkblue;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.contenedor {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.cuadro {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(237, 231, 231);
+    font-weight: bold;
+}
+
+.rojo { background-color: red; }
+.azul { background-color: blue; }
+.verde { background-color: green; }
+
+.cuadro {
+    transition: transform 0.2s ease;
+}
+
+.cuadro:hover {
+    transform: rotate(15deg);
+}
+
+.cuadro:active {
+    transform: rotate(-15deg);
+}
+
+/* Contenedor de la ruleta */
+.container {
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 125px;
+}
+
+/* Contenedor de la imagen */
+.wheel {
+    margin: 20px auto;
+}
+
+/* La imagen de la ruleta */
+#wheel-image {
+    width: 87px;
+    height: 87px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* El botón de girar */
+#spin-button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    font-size: 10px;
+    font-weight: bold;
+    background: white;
+    color: #764ba2;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Efecto al pasar el mouse */
+#spin-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Efecto al hacer clic */
+#spin-button:active {
+    transform: scale(0.95);
+}
+
+.boton-alternativo {
+    font-size: 2em;
+    background-color: rgb(131, 123, 243);
+    border-radius: 30px;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.titulo-principal {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 60px;
+    color: rgb(212, 32, 200);
+}
+
+.subtitulo {
+    text-align: center;
+    color: rgb(5, 145, 220);
+}
+
+.llamada-accion {
+    text-align: center;
+    color: blueviolet;
+    font-size: 2em;
+}   
+
+.selector-color {
+    width: 100px;
+    height: 50px;
+}
+
+.selector-color {
+    width: 100px;
+    height: 50px;
+}
+
+/* ── PALETA DE COLORES HSL ───────────────────────────────
+   
+   Lógica de variaciones:
+   - Hue (tono):        200 — fijo en los tres, define la familia azul
+   - Saturation (sat):  70% — fija, mantiene la misma viveza
+   - Lightness (luz):   varía para aclarar u oscurecer
+   
+   Color oscuro:   hsl(200, 70%, 30%)  Lightness baja → más oscuro
+   Color primario: hsl(200, 70%, 50%)  Lightness media → color puro
+   Color claro:    hsl(200, 70%, 70%)  Lightness sube → más claro
+   
+──────────────────────────────────────────────────────── */
+
+:root {
+    --color-oscuro:   hsl(200, 70%, 30%);
+    --color-primario: hsl(200, 70%, 50%);
+    --color-claro:    hsl(200, 70%, 70%);
+}
+
+.seccion-paleta {
+    margin: 40px auto;
+    text-align: center;
+}
+
+.paleta-titulo {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.paleta {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.color-bloque {
+    width: 120px;
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 14px;
+}
+
+.color-codigo {
+    font-family: monospace;
+    font-size: 11px;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 1px;
+}
+
+.color-bloque.oscuro   { background-color: var(--color-oscuro); }
+.color-bloque.primario { background-color: var(--color-primario); }
+.color-bloque.claro    { background-color: var(--color-claro); }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Colorangie</title>
+</head>
+<body>
+
+    <main>
+        <section>
+            <article>
+                <h1 class="titulo-principal">CREACION DE PALETAS DE COLORES</h1>
+                <h2 class="subtitulo">Amplia gama de colorimetría para tus diseños</h2>
+                <h3 class="llamada-accion">¡Comencemos!</h3>
+                <!-- Paleta de colores HSL con variaciones de Lightness -->
+<section class="seccion-paleta">
+    <h2 class="paleta-titulo">Paleta de Colores</h2>
+    
+    <div class="paleta">
+
+        <!-- Color más oscuro: mismo Hue y Saturation, Lightness baja a 30% -->
+        <div class="color-bloque oscuro">
+            <span class="color-codigo">hsl(200, 70%, 30%)</span>
+        </div>
+
+        <!-- Color primario base: Hue 200, Saturation 70%, Lightness 50% -->
+        <div class="color-bloque primario">
+            <span class="color-codigo">hsl(200, 70%, 50%)</span>
+        </div>
+
+        <!-- Color más claro: mismo Hue y Saturation, Lightness sube a 70% -->
+        <div class="color-bloque claro">
+            <span class="color-codigo">hsl(200, 70%, 70%)</span>
+        </div>
+
+    </div>
+</section>
+            </article>
+        </section>
+
+        <div class="container">
+            <div id="wheel" class="wheel">
+                <img src="Ruletaadecolores.svg" alt="Ruleta de colores" id="wheel-image">
+            </div>
+        <button id="spin-button">¡GIRAR RULETA!</button>
+        </div>
+
+        <button class="boton-alternativo">Mira la cuadrícula de colores para crear paleta</button>
+        <input type="color" class="selector-color"/>
+    </main>
+    
+    <div class="caja"></div>
+
+    <div class="producto">
+        <img src="Cuadricula de colores.jpg" alt="Paleta de colores">
+        <h3>Cuadricula de colores</h3>
+        <p class="precio">OFERTA $100</p>
+        <button>Agregar al carrito</button>
+    </div>
+
+    <div class="contenedor">
+        <div class="cuadro rojo">1</div>
+        <div class="cuadro azul">2</div>
+        <div class="cuadro verde">3</div>
+    </div>
+
+   <script src="script.js"></script>
+</body>
+</html>
