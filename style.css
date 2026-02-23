@@ -32,9 +32,11 @@ body {
 }
 
 .site-titulo {
-    font-size: 48px;
+    font-size: 92px;
     color: rgb(212, 32, 200);
     margin-bottom: 8px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
 }
 
 .site-subtitulo {
@@ -47,6 +49,7 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 40px 20px;
+    min-height: 70vh;
 }
 
 /* ── SECCIÓN DE CONTROLES ────────────────── */
@@ -119,6 +122,41 @@ main {
     outline-offset: 3px;
 }
 
+/* Botón HEX seleccionado — color rosa */
+.opciones-formato .opcion:first-child input[type="radio"]:checked + span {
+    border-color: rgb(212, 32, 200);
+    background-color: rgb(212, 32, 200);
+    color: #ffffff;
+}
+
+/* Botón HSL seleccionado — color azul */
+.opciones-formato .opcion:last-child input[type="radio"]:checked + span {
+    border-color: rgb(5, 145, 220);
+    background-color: rgb(5, 145, 220);
+    color: #ffffff;
+}
+
+/* Botón 6 colores seleccionado — rosa */
+.opciones-tamano .opcion:first-child input[type="radio"]:checked + span {
+    border-color: rgb(212, 32, 200);
+    background-color: rgb(212, 32, 200);
+    color: #ffffff;
+}
+
+/* Botón 8 colores seleccionado — verde neón */
+.opciones-tamano .opcion:nth-child(2) input[type="radio"]:checked + span {
+    border-color: rgb(0, 255, 150);
+    background-color: rgb(0, 255, 150);
+    color: #000000;
+}
+
+/* Botón 9 colores seleccionado — amarillo neón */
+.opciones-tamano .opcion:nth-child(3) input[type="radio"]:checked + span {
+    border-color: rgb(255, 230, 0);
+    background-color: rgb(255, 230, 0);
+    color: #000000;
+}
+
 .opcion:hover span {
     border-color: #888;
     color: #fff;
@@ -154,16 +192,22 @@ main {
 
 .btn-secundario {
     padding: 10px 24px;
-    background-color: transparent;
-    color: #888;
-    border: 1px solid #444;
+    background-color: rgb(130, 102, 175);
+    color: #000000;
+    border: none;
     border-radius: 8px;
     font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease;
     margin-top: 16px;
 }
 
+.btn-secundario:hover {
+    background-color: rgb(53, 103, 228);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 21, 255, 0.4);
+}
 .btn-secundario:hover {
     border-color: #888;
     color: #fff;
@@ -192,7 +236,6 @@ main {
 }
 
 .color-tarjeta:hover {
-    transform: translateY(-6px);
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 
@@ -208,33 +251,18 @@ main {
     }
 }
 
+/* ── BLOQUE DE COLOR VISUAL ──────────────── */
 .color-vista {
     width: 100%;
     height: 140px;
     position: relative;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
-/* Tooltip copiar */
-.color-vista::after {
-    content: 'Copiar HEX';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 20px;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-    pointer-events: none;
-    white-space: nowrap;
-}
-
-.color-tarjeta:hover .color-vista::after {
-    opacity: 1;
+/* Rotación al pasar el cursor sobre la tarjeta */
+.color-tarjeta:hover .color-vista {
+    transform: rotate(6deg) scale(1.05);
 }
 
 .color-info {
@@ -246,14 +274,22 @@ main {
     font-size: 13px;
     color: #ffffff;
     display: block;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
+    background-color: #2a2a2a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-left: 3px solid rgb(212, 32, 200);
 }
 
 .color-hsl {
     font-family: monospace;
     font-size: 11px;
-    color: #888;
+    color: #aaaaaa;
     display: block;
+    background-color: #2a2a2a;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-left: 3px solid rgb(5, 145, 220);
 }
 
 /* Botón de bloqueo dentro de la tarjeta */
@@ -284,9 +320,15 @@ main {
 }
 
 .titulo-guardadas {
-    font-size: 22px;
-    color: rgb(5, 145, 220);
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    background-color: rgb(5, 145, 220);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
     margin-bottom: 20px;
+    cursor: default;
 }
 
 .lista-guardadas {
@@ -315,7 +357,6 @@ main {
     border: 1px solid #333;
     cursor: pointer;
     transition: transform 0.2s ease;
-    title: attr(data-hex);
 }
 
 .color-guardado:hover {
@@ -329,11 +370,39 @@ main {
     font-family: monospace;
 }
 
+/* ── MENSAJE DE BIENVENIDA ───────────────── */
+/* Se muestra antes de generar la primera paleta */
+.bienvenida {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 50px 40px;
+    text-align: center;
+    background-color: #1a1a1a;
+    border: 2px dashed rgb(212, 32, 200);
+    border-radius: 16px;
+    letter-spacing: 1px;
+    width: 500px;
+    margin: 0 auto;
+    grid-column: 1 / -1;
+}
+
+.estado-accion {
+    color: rgb(247, 242, 246);
+    font-size: 20px;
+}
+
 /* ── ESTADO VACÍO ────────────────────────── */
+/* Se muestra cuando no hay paletas guardadas */
 .estado-vacio {
-    color: #555;
+    display: inline-block;
     font-size: 14px;
-    padding: 40px;
+    font-weight: bold;
+    color: #000000;
+    background-color: rgb(187, 235, 12);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
     text-align: center;
 }
 
@@ -363,10 +432,11 @@ main {
 /* ── FOOTER ──────────────────────────────── */
 .site-footer {
     text-align: center;
-    padding: 24px;
+    padding: 16px 24px;
     border-top: 1px solid #333;
     color: #555;
-    font-size: 13px;
+    font-size: 20px;
+    margin-top: 200;
 }
 
 /* ── PALETA HSL ──────────────────────────────────────────

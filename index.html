@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    <title>Colorangie — Generador de Paletas</title>
+    <title>Colorfly Studio — Generador de Paletas</title>
 </head>
 <body>
 
     <header class="site-header">
-        <h1 class="site-titulo">Colorfly Studio By Colorangie</h1>
+        <h1 class="site-titulo">Colorfly Studio</h1>
         <p class="site-subtitulo">Generador de Paletas de Colores</p>
     </header>
 
@@ -64,13 +65,14 @@
         <section class="seccion-paleta">
             <h2 class="sr-only">Paleta generada</h2>
             <div id="grilla-paleta" class="grilla-paleta" role="list">
-                <p class="estado-vacio">Presiona "Generar paleta" para comenzar</p>
+                <!-- Mensaje de bienvenida con clase propia -->
+                <p class="bienvenida">✦ Selecciona tamaño y formato, luego presiona <span class="estado-accion">Generar paleta</span></p>
             </div>
         </section>
 
         <!-- Paletas guardadas -->
         <section class="seccion-guardadas">
-            <h2 class="titulo-guardadas">Paletas guardadas</h2>
+            <button class="titulo-guardadas">Paletas guardadas</button>
             <div id="lista-guardadas" class="lista-guardadas">
                 <p class="estado-vacio">No hay paletas guardadas aún</p>
             </div>
@@ -87,7 +89,7 @@
     </div>
 
     <footer class="site-footer">
-        <p>Colorangie &copy; 2025 — Colorfly Studio</p>
+        <p>Colorfly Studio &copy; 2026</p>
     </footer>
 
     <script src="script.js"></script>
