@@ -1,72 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
-    <title>Colorangie</title>
+    <title>Colorangie — Generador de Paletas</title>
 </head>
 <body>
 
+    <header class="site-header">
+        <h1 class="site-titulo">Colorfly Studio By Colorangie</h1>
+        <p class="site-subtitulo">Generador de Paletas de Colores</p>
+    </header>
+
     <main>
-        <section>
-            <article>
-                <h1 class="titulo-principal">CREACION DE PALETAS DE COLORES</h1>
-                <h2 class="subtitulo">Amplia gama de colorimetría para tus diseños</h2>
-                <h3 class="llamada-accion">¡Comencemos!</h3>
-                <!-- Paleta de colores HSL con variaciones de Lightness -->
-<section class="seccion-paleta">
-    <h2 class="paleta-titulo">Paleta de Colores</h2>
-    
-    <div class="paleta">
 
-        <!-- Color más oscuro: mismo Hue y Saturation, Lightness baja a 30% -->
-        <div class="color-bloque oscuro">
-            <span class="color-codigo">hsl(200, 70%, 30%)</span>
-        </div>
+        <!-- Controles principales -->
+        <section class="seccion-controles">
 
-        <!-- Color primario base: Hue 200, Saturation 70%, Lightness 50% -->
-        <div class="color-bloque primario">
-            <span class="color-codigo">hsl(200, 70%, 50%)</span>
-        </div>
+            <!-- Selector de tamaño -->
+            <fieldset class="control-grupo">
+                <legend class="control-etiqueta">Tamaño de paleta</legend>
+                <div class="opciones-tamano">
+                    <label class="opcion">
+                        <input type="radio" name="tamano" value="6" checked>
+                        <span>6 colores</span>
+                    </label>
+                    <label class="opcion">
+                        <input type="radio" name="tamano" value="8">
+                        <span>8 colores</span>
+                    </label>
+                    <label class="opcion">
+                        <input type="radio" name="tamano" value="9">
+                        <span>9 colores</span>
+                    </label>
+                </div>
+            </fieldset>
 
-        <!-- Color más claro: mismo Hue y Saturation, Lightness sube a 70% -->
-        <div class="color-bloque claro">
-            <span class="color-codigo">hsl(200, 70%, 70%)</span>
-        </div>
+            <!-- Selector de formato -->
+            <fieldset class="control-grupo">
+                <legend class="control-etiqueta">Formato de color</legend>
+                <div class="opciones-formato">
+                    <label class="opcion">
+                        <input type="radio" name="formato" value="hex" checked>
+                        <span>HEX</span>
+                    </label>
+                    <label class="opcion">
+                        <input type="radio" name="formato" value="hsl">
+                        <span>HSL</span>
+                    </label>
+                </div>
+            </fieldset>
 
-    </div>
-</section>
-            </article>
+            <!-- Botón principal -->
+            <button id="btn-generar" class="btn-principal">
+                Generar paleta
+            </button>
+
         </section>
 
-        <div class="container">
-            <div id="wheel" class="wheel">
-                <img src="Ruletaadecolores.svg" alt="Ruleta de colores" id="wheel-image">
+        <!-- Paleta generada -->
+        <section class="seccion-paleta">
+            <h2 class="sr-only">Paleta generada</h2>
+            <div id="grilla-paleta" class="grilla-paleta" role="list">
+                <p class="estado-vacio">Presiona "Generar paleta" para comenzar</p>
             </div>
-        <button id="spin-button">¡GIRAR RULETA!</button>
-        </div>
+        </section>
 
-        <button class="boton-alternativo">Mira la cuadrícula de colores para crear paleta</button>
-        <input type="color" class="selector-color"/>
+        <!-- Paletas guardadas -->
+        <section class="seccion-guardadas">
+            <h2 class="titulo-guardadas">Paletas guardadas</h2>
+            <div id="lista-guardadas" class="lista-guardadas">
+                <p class="estado-vacio">No hay paletas guardadas aún</p>
+            </div>
+            <button id="btn-limpiar" class="btn-secundario">
+                Limpiar guardadas
+            </button>
+        </section>
+
     </main>
-    
-    <div class="caja"></div>
 
-    <div class="producto">
-        <img src="Cuadricula de colores.jpg" alt="Paleta de colores">
-        <h3>Cuadricula de colores</h3>
-        <p class="precio">OFERTA $100</p>
-        <button>Agregar al carrito</button>
+    <!-- Toast de feedback -->
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-hidden="true">
+        <span id="toast-texto">¡Copiado!</span>
     </div>
 
-    <div class="contenedor">
-        <div class="cuadro rojo">1</div>
-        <div class="cuadro azul">2</div>
-        <div class="cuadro verde">3</div>
-    </div>
+    <footer class="site-footer">
+        <p>Colorangie &copy; 2025 — Colorfly Studio</p>
+    </footer>
 
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,219 +1,396 @@
-body{
-    background-color: rgb(6, 4, 0);
-}
-
-*{
+/* ── RESET Y BASE ────────────────────────── */
+* {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
-.enlace-youtube {
-    font-size: 1.5em;
-}
-
-.caja {
-  width: 300px;
-  height: 200px;
-}
-* {
-  box-sizing: border-box;
-}
-
-.producto {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid lightgray;
-  border-radius: 8px;
-  margin: 20px;
-  background-color: white;
-}
-
-.producto img {
-  width: 100%;
-  margin-bottom: 15px;
-  border-radius: 4px;
-}
-
-.producto h3 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-}
-
-.producto .precio {
-  color: green;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 10px 0;
-}
-
-.producto button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-}
-
-.producto button:hover {
-  background-color: darkblue;
-}
 body {
-    margin: 0;
+    background-color: #0f0800;
     font-family: Arial, sans-serif;
-}
-.contenedor {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 50px;
+    color: #ffffff;
+    min-height: 100vh;
 }
 
-.cuadro {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: rgb(237, 231, 231);
-    font-weight: bold;
+/* Clase para ocultar visualmente pero mantener accesibilidad */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
-.rojo { background-color: red; }
-.azul { background-color: blue; }
-.verde { background-color: green; }
-
-.cuadro {
-    transition: transform 0.2s ease;
-}
-
-.cuadro:hover {
-    transform: rotate(15deg);
-}
-
-.cuadro:active {
-    transform: rotate(-15deg);
-}
-
-/* Contenedor de la ruleta */
-.container {
+/* ── HEADER ──────────────────────────────── */
+.site-header {
     text-align: center;
-    padding: 10px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
-    margin: 20px auto;
-    max-width: 125px;
+    padding: 40px 20px 20px;
+    border-bottom: 1px solid #333;
 }
 
-/* Contenedor de la imagen */
-.wheel {
-    margin: 20px auto;
-}
-
-/* La imagen de la ruleta */
-#wheel-image {
-    width: 87px;
-    height: 87px;
-    display: block;
-    margin: 0 auto;
-}
-
-/* El botón de girar */
-#spin-button {
-    margin-top: 15px;
-    padding: 8px 20px;
-    font-size: 10px;
-    font-weight: bold;
-    background: white;
-    color: #764ba2;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Efecto al pasar el mouse */
-#spin-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-/* Efecto al hacer clic */
-#spin-button:active {
-    transform: scale(0.95);
-}
-
-.boton-alternativo {
-    font-size: 2em;
-    background-color: rgb(131, 123, 243);
-    border-radius: 30px;
-    border: none;
-    padding: 10px 24px;
-    cursor: pointer;
-}
-
-.titulo-principal {
+.site-titulo {
     font-size: 48px;
-    text-align: center;
-    margin-top: 60px;
     color: rgb(212, 32, 200);
+    margin-bottom: 8px;
 }
 
-.subtitulo {
-    text-align: center;
+.site-subtitulo {
+    font-size: 18px;
     color: rgb(5, 145, 220);
 }
 
-.llamada-accion {
+/* ── MAIN ────────────────────────────────── */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* ── SECCIÓN DE CONTROLES ────────────────── */
+.seccion-controles {
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+    flex-wrap: wrap;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin-bottom: 40px;
+}
+
+.control-grupo {
+    border: none;
+    padding: 0;
+}
+
+.control-etiqueta {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* ── OPCIONES DE RADIO ───────────────────── */
+.opciones-tamano,
+.opciones-formato {
+    display: flex;
+    gap: 8px;
+}
+
+.opcion {
+    cursor: pointer;
+}
+
+.opcion input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.opcion span {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1.5px solid #444;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #888;
+    background-color: #222;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.opcion input[type="radio"]:checked + span {
+    border-color: rgb(212, 32, 200);
+    color: #ffffff;
+    background-color: rgb(212, 32, 200);
+    font-weight: bold;
+}
+
+/* Foco visible para accesibilidad con teclado */
+.opcion input[type="radio"]:focus-visible + span {
+    outline: 2px solid rgb(212, 32, 200);
+    outline-offset: 3px;
+}
+
+.opcion:hover span {
+    border-color: #888;
+    color: #fff;
+}
+
+/* ── BOTONES ─────────────────────────────── */
+.btn-principal {
+    padding: 12px 28px;
+    background-color: rgb(212, 32, 200);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-principal:hover {
+    background-color: rgb(170, 20, 160);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 32, 200, 0.4);
+}
+
+.btn-principal:active {
+    transform: translateY(0);
+}
+
+.btn-principal:focus-visible {
+    outline: 2px solid rgb(212, 32, 200);
+    outline-offset: 3px;
+}
+
+.btn-secundario {
+    padding: 10px 24px;
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 16px;
+}
+
+.btn-secundario:hover {
+    border-color: #888;
+    color: #fff;
+}
+
+/* ── GRILLA DE PALETA ────────────────────── */
+.seccion-paleta {
+    margin-bottom: 48px;
+}
+
+.grilla-paleta {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+}
+
+/* ── TARJETA DE COLOR ────────────────────── */
+.color-tarjeta {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    list-style: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: entradaTarjeta 0.4s ease both;
+}
+
+.color-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Animación de entrada */
+@keyframes entradaTarjeta {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.color-vista {
+    width: 100%;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Tooltip copiar */
+.color-vista::after {
+    content: 'Copiar HEX';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.color-tarjeta:hover .color-vista::after {
+    opacity: 1;
+}
+
+.color-info {
+    padding: 10px 12px;
+}
+
+.color-hex {
+    font-family: monospace;
+    font-size: 13px;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.color-hsl {
+    font-family: monospace;
+    font-size: 11px;
+    color: #888;
+    display: block;
+}
+
+/* Botón de bloqueo dentro de la tarjeta */
+.btn-bloqueo {
+    width: 100%;
+    padding: 6px;
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid #333;
+    color: #888;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-bloqueo:hover {
+    background-color: #222;
+    color: #fff;
+}
+
+.btn-bloqueo.bloqueado {
+    color: rgb(212, 32, 200);
+}
+
+/* ── PALETAS GUARDADAS ───────────────────── */
+.seccion-guardadas {
+    margin-bottom: 48px;
+}
+
+.titulo-guardadas {
+    font-size: 22px;
+    color: rgb(5, 145, 220);
+    margin-bottom: 20px;
+}
+
+.lista-guardadas {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.paleta-guardada {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.paleta-guardada-colores {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.color-guardado {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    title: attr(data-hex);
+}
+
+.color-guardado:hover {
+    transform: scale(1.1);
+}
+
+.paleta-guardada-fecha {
+    font-size: 11px;
+    color: #555;
+    margin-top: 8px;
+    font-family: monospace;
+}
+
+/* ── ESTADO VACÍO ────────────────────────── */
+.estado-vacio {
+    color: #555;
+    font-size: 14px;
+    padding: 40px;
     text-align: center;
-    color: blueviolet;
-    font-size: 2em;
-}   
-
-.selector-color {
-    width: 100px;
-    height: 50px;
 }
 
-.selector-color {
-    width: 100px;
-    height: 50px;
+/* ── TOAST ───────────────────────────────── */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background-color: rgb(212, 32, 200);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
 }
 
-/* ── PALETA DE COLORES HSL ───────────────────────────────
-   
+.toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ── FOOTER ──────────────────────────────── */
+.site-footer {
+    text-align: center;
+    padding: 24px;
+    border-top: 1px solid #333;
+    color: #555;
+    font-size: 13px;
+}
+
+/* ── PALETA HSL ──────────────────────────────────────────
    Lógica de variaciones:
-   - Hue (tono):        200 — fijo en los tres, define la familia azul
+   - Hue (tono):        200 — fijo, define la familia azul
    - Saturation (sat):  70% — fija, mantiene la misma viveza
    - Lightness (luz):   varía para aclarar u oscurecer
-   
-   Color oscuro:   hsl(200, 70%, 30%)  Lightness baja → más oscuro
-   Color primario: hsl(200, 70%, 50%)  Lightness media → color puro
-   Color claro:    hsl(200, 70%, 70%)  Lightness sube → más claro
-   
-──────────────────────────────────────────────────────── */
 
+   Color oscuro:   hsl(200, 70%, 30%)  Lightness baja
+   Color primario: hsl(200, 70%, 50%)  Lightness media
+   Color claro:    hsl(200, 70%, 70%)  Lightness sube
+──────────────────────────────────────────────────────── */
 :root {
     --color-oscuro:   hsl(200, 70%, 30%);
     --color-primario: hsl(200, 70%, 50%);
     --color-claro:    hsl(200, 70%, 70%);
 }
 
-.seccion-paleta {
+.seccion-paleta-hsl {
     margin: 40px auto;
     text-align: center;
 }
 
-.paleta-titulo {
-    color: white;
-    margin-bottom: 20px;
-    font-size: 22px;
-}
-
-.paleta {
+.paleta-hsl {
     display: flex;
     justify-content: center;
     gap: 0;
@@ -234,7 +411,6 @@ body {
     color: white;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     writing-mode: vertical-rl;
-    text-orientation: mixed;
     letter-spacing: 1px;
 }
 
